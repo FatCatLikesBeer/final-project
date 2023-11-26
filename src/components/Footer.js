@@ -8,27 +8,27 @@ function Footer() {
         <Logo />
       </quarter>
       <quarter id="navigation">
-          <divTitle>Navigation</divTitle>
-          <footerLink><a href="/#home">Home</a></footerLink>
-          <footerLink><a href="/#about">About</a></footerLink>
-          <footerLink><a href="/#menu">Menu</a></footerLink>
-          <footerLink><a href="/#reservation">Reservation</a></footerLink>
-          <footerLink><a href="/#order">Order</a></footerLink>
+          <h4>Navigation</h4>
+          <a href="/#home">Home</a>
+          <a href="/#about">About</a>
+          <a href="/#menu">Menu</a>
+          <a href="/#reservation">Reservation</a>
+          <a href="/#order">Order</a>
       </quarter>
       <quarter id="socialMedia">
-          <divTitle>Social Media</divTitle>
-          <footerLink><a href="https://www.twitter.com" target="_blank">Twitter</a></footerLink>
-          <footerLink><a href="https://www.facebook.com" target="_blank">Facebook</a></footerLink>
-          <footerLink><a href="https://www.instagram.com" target="_blank">Instagram</a></footerLink>
-          <footerLink><a href="https://www.tiktok.com" target="_blank">TikTok</a></footerLink>
-          <footerLink><a href="https://www.youtube.com" target="_blank">YouTube</a></footerLink>
+          <h4>Social Media</h4>
+          <a href="https://www.twitter.com" target="_blank">Twitter</a>
+          <a href="https://www.facebook.com" target="_blank">Facebook</a>
+          <a href="https://www.instagram.com" target="_blank">Instagram</a>
+          <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+          <a href="https://www.youtube.com" target="_blank">YouTube</a>
       </quarter>
       <quarter id="contact">
-          <divTitle>Contact</divTitle>
-          <footerLink><a href="/contact/#phone">Phone</a></footerLink>
-          <footerLink><a href="/contact/#text">Text</a></footerLink>
-          <footerLink><a href="/contact/#email">Email</a></footerLink>
-          <footerLink><a href="/contact/#address">Address</a></footerLink>
+          <h4>Contact</h4>
+          <a href="/contact/#phone">Phone</a>
+          <a href="/contact/#text">Text</a>
+          <a href="/contact/#email">Email</a>
+          <a href="/contact/#address">Address</a>
       </quarter>
     </footer>
   );
