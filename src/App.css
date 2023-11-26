@@ -9,12 +9,12 @@ h4 {
   font-weight: bold;
 }
 
-navigation {
+.navigation {
   background-color: purple;
   display: grid;
 }
 
-navigation li {
+.navigation li {
   display: inline;
   padding: 40px;
 }
@@ -26,7 +26,7 @@ footer {
   padding-bottom: 15px;
 }
 
-footer quarter {
+footer .quarter {
   display: flex;
   flex-direction: column;
 }
