@@ -7,9 +7,6 @@ function Header() {
     <meta name="og:title" content="Little Lemon Resturant" />
     <meta name="og:description" content="Chicago's best resturant for resh, authentic Mediterranean food." />
     <meta name="og:image" content={chefImage} />
-    <p>
-      Header Goes Here
-    </p>
     </>
   );
 };

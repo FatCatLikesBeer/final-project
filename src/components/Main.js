@@ -2,9 +2,11 @@ import React from "react";
 
 function Main(props) {
   return (
-    <div>
-      Main Component
-    </div>
+    <main>
+      Hero Section
+      Cards Section
+      Reviews Section
+    </main>
   );
 };
 
