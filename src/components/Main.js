@@ -4,7 +4,7 @@ function Main(props) {
   return (
     <main>
       Hero Section
-      Cards Section
+      Dish Section
       Reviews Section
     </main>
   );

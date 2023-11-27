@@ -1,3 +1,18 @@
+h1, h2, h3 {
+  font-family: "Markazi Text";
+}
+
+h1 {
+  font-size: 56pt;
+  color: #F4CE14;
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  font-family: "Karla", regular;
+}
+
 .App {
   text-align: center;
   margin: 40px;
@@ -10,17 +25,13 @@ h4 {
 }
 
 .navigation {
-  background-color: purple;
   display: grid;
-}
-
-.navigation li {
-  display: inline;
-  padding: 40px;
+  grid-template-columns: repeat(6, 15%);
+  place-items: center;
+  padding-bottom: 25px;
 }
 
 footer {
-  background-color: purple;
   display: grid;
   grid-template-columns: repeat(4, 25%);
   padding-bottom: 15px;
@@ -29,21 +40,54 @@ footer {
 footer .quarter {
   display: flex;
   flex-direction: column;
+  margin-left: 20px;
 }
 
 footer a {
   margin: 3px 5px;
 }
 
-#logo {
-  vertical-align: center;
-  border: 1px;
-  border-color: black;
-  margin: 35px;
-  padding: 10px;
+#footerlogo {
+  height: auto;
+  max-width: 45%;
+  min-width: 40px;
+  display: center;
+}
+
+#footerlogo img {
+  margin-top: 10px;
 }
 
 #navigation, #socialMedia, #contact {
   text-align: left;
 }
 
+#herosection {
+  background-color: rgb(58, 75, 70);
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  grid-column-gap: 10%;
+}
+
+#herocopy {
+  margin-left: 10%;
+  color: white;
+  text-align: left;
+  width: 50vw;
+}
+
+#heroimagediv {
+  text-align: right;
+  margin-right: 10%;
+}
+
+#heroimage {
+  height: 350px;
+  border-radius: 15px;
+}
+
+#herocopy #herodescription {
+  text-align: left;
+  width: 300px;
+  height: 150px;
+}

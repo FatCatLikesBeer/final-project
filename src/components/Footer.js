@@ -1,11 +1,12 @@
 import React from "react";
-import { ReactComponent as Logo } from "../icons_assets/logo.svg";
+
+const Logo = require("../icons_assets/logo_vertical.png");
 
 function Footer() {
   return (
     <footer>
-      <div className="quarter" id="logo">
-        <Logo />
+      <div className="quarter" id="footerlogo">
+        <img src={Logo} />
       </div>
       <div className="quarter" id="navigation">
           <h4>Navigation</h4>
