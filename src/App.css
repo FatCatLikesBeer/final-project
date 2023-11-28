@@ -1,3 +1,13 @@
+.App {
+  text-align: center;
+  margin: 40px;
+}
+
+a {
+  color: #3A4B46;
+  text-decoration: none;
+}
+
 h1, h2, h3 {
   font-family: "Markazi Text";
 }
@@ -6,16 +16,10 @@ h1 {
   font-size: 56pt;
   color: #F4CE14;
   margin: 0px;
-  padding: 0px;
 }
 
 p {
   font-family: "Karla", regular;
-}
-
-.App {
-  text-align: center;
-  margin: 40px;
 }
 
 h4 {
@@ -24,17 +28,29 @@ h4 {
   font-weight: bold;
 }
 
-.navigation {
+/*#navrow {
+  padding-top: 15px;
   display: grid;
-  grid-template-columns: repeat(6, 15%);
-  place-items: center;
+  grid-template-columns: repeat(5, 20%);
   padding-bottom: 25px;
+}*/
+
+#navrow {
+  display: flex;
+  margin: 15px 0px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#navrow a {
+  margin: 5px 0px;
+  flex-basis: 90px;
 }
 
 footer {
   display: grid;
   grid-template-columns: repeat(4, 25%);
-  padding-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 footer .quarter {
@@ -63,7 +79,7 @@ footer a {
 }
 
 #herosection {
-  background-color: rgb(58, 75, 70);
+  background-color: #3A4B46;
   display: grid;
   grid-template-columns: repeat(2, 45%);
   grid-column-gap: 10%;

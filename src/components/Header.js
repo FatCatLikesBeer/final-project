@@ -3,6 +3,7 @@ const chefImage = require("../icons_assets/Mario and Adrian A.jpg");
 function Header() {
   return (
     <>
+    <title>Little Lemon Resturant</title>
     <meta charSet="utf-8"/>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Markazi+Text|Karla" />
