@@ -10,7 +10,7 @@
 
 # production
 /build
-./src/Session.vim
+/src/Session.vim
 
 # misc
 .DS_Store
