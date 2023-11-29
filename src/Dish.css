@@ -5,6 +5,34 @@
   justify-content: center;
 }
 
+#dishcomponent {
+
+}
+
+#dishcomponenttitle {
+  display: grid;
+  grid-template-columns: 50% 15%;
+  max-width: 850px;
+  margin: auto;
+  padding-top: 20px;
+  justify-content: space-between;
+}
+
+#dishcomponenttitle div {
+  text-align: left;
+}
+
+#dishcomponenttitle #dishbutton {
+  text-align: right;
+}
+
+#dishcomponenttitle button {
+  height: 35px;
+  width: 95px;
+  font-family: "Markazi Text";
+  font-size: 20px;
+}
+
 .dishcard {
   margin: 25px;
   height: 425px;
