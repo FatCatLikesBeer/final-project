@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Dish from "./components/Dish";
 import Reviews from "./components/Reviews";
+import Copyright from "./components/Copyright"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Reviews />
       <p>Make another about us section component here</p>
       <Footer />
+      <Copyright />
     </div>
   );
 };

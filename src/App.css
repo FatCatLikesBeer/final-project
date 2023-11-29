@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  margin: 40px;
+  margin-top: 40px;
 }
 
 a {
@@ -12,6 +12,13 @@ h1, h2, h3 {
   font-family: "Markazi Text";
 }
 
+h1 {
+  font-size: 56pt;
+  color: #F4CE14;
+  margin: 0px;
+  padding: 0px;
+}
+
 h2 {
   padding: 0px;
   margin: 0px;
@@ -20,12 +27,6 @@ h2 {
 
 h3 {
   padding: 0px;
-  margin: 0px;
-}
-
-h1 {
-  font-size: 56pt;
-  color: #F4CE14;
   margin: 0px;
 }
 
@@ -51,11 +52,16 @@ h4 {
   flex-basis: 90px;
 }
 
-#herosection {
+#herobackground {
   background-color: #3A4B46;
-  display: grid;
-  grid-template-columns: repeat(2, 45%);
+}
+
+#herosection {
+  margin: auto;
+  display: flex;
+  grid-template-columns: repeat(2, 35%);
   grid-column-gap: 10%;
+  max-width: 950px;
 }
 
 #herocopy {
@@ -65,6 +71,10 @@ h4 {
   width: 50vw;
 }
 
+#herocopy h2 {
+  margin-top: 20px;
+}
+
 #herodescription {
   text-align: left;
   width: 300px;
@@ -72,7 +82,7 @@ h4 {
 }
 
 #heroimagediv {
-  text-align: right;
+  align-items: right;
   margin-right: 10%;
 }
 
@@ -85,7 +95,7 @@ footer {
   text-align: left;
   display: flex;
   flex-wrap: wrap;
-  margin: 200px 0px 20px 0px;
+  margin: 200px 60px 20px 60px;
   max-width: 800px;
 }
 
@@ -114,4 +124,16 @@ footer a {
   margin-top: 10px;
 }
 
+#copyright {
+  background-color: #3A4B46;
+  margin: 0px;
+  height: 60px;
+  width: 100%;
+}
 
+#copyright h4 {
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 20px;
+}
