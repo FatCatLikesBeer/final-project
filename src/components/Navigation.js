@@ -11,6 +11,7 @@ function Navigation() {
         <a href="/#menu">Menu</a>
         <a href="/#reserve">Reserve</a>
         <a href="/#order">Order</a>
+        <a href="/#login">Login</a>
       </div>
     </>
   );

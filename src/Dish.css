@@ -1,0 +1,56 @@
+#dish {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.dishcard {
+  margin: 25px;
+  height: 425px;
+  width: 250px;
+  background-color: #555;
+  border-radius: 15px;
+}
+
+.dishimage {
+  width: 250px;
+  height: 166px;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.dishtext {
+  padding: 15px;
+}
+
+.dishhead {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  font-size: 18px;
+  font-family: "Markazi Text";
+}
+
+.dishname {
+  text-align: left;
+}
+
+.dishprice {
+  color: red;
+  text-align: right;
+}
+
+.dishcopy {
+  height: 100px;
+  text-align: left;
+  padding-top: 15px;
+  font-family: "Karla", regular;
+}
+
+.dishtext p {
+  text-align: left;
+  padding-top: 45px;
+}
+
+.dishtext p a {
+  color: #F4CE14;
+}

@@ -13,23 +13,20 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +7 ./App.css
-badd +8 ./App.js
-badd +19 ./components/Navigation.js
+badd +45 ./App.css
+badd +15 ./App.js
+badd +18 ./components/Hero.js
+badd +28 ./components/Dish.js
+badd +2 ./components/DishCards.js
 argglobal
 %argdel
 $argadd ./App.css
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
+tabnew +setlocal\ bufhidden=wipe
+tabnew +setlocal\ bufhidden=wipe
 tabrewind
 edit ./App.css
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
 argglobal
 setlocal fdm=indent
 setlocal fde=0
@@ -39,12 +36,12 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 7 - ((6 * winheight(0) + 41) / 82)
+let s:l = 45 - ((14 * winheight(0) + 41) / 82)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 7
-normal! 03|
+keepjumps 45
+normal! 011|
 tabnext
 edit ./App.js
 argglobal
@@ -57,16 +54,23 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 17 - ((16 * winheight(0) + 41) / 82)
+let s:l = 15 - ((14 * winheight(0) + 40) / 81)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 17
+keepjumps 15
 normal! 011|
 tabnext
-edit ./components/Navigation.js
+edit ./components/Hero.js
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
-balt ./App.js
+balt ./components/Dish.js
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -75,19 +79,55 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-5
-normal! zo
-6
-normal! zo
-7
-normal! zo
-let s:l = 19 - ((18 * winheight(0) + 41) / 82)
+let s:l = 18 - ((17 * winheight(0) + 40) / 81)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 19
-normal! 026|
-tabnext 1
+keepjumps 18
+normal! 04|
+tabnext
+edit ./components/Dish.js
+argglobal
+balt ./components/DishCards.js
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+25
+normal! zo
+26
+normal! zo
+27
+normal! zo
+let s:l = 34 - ((33 * winheight(0) + 40) / 81)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 34
+normal! 02|
+tabnext
+edit ./components/DishCards.js
+argglobal
+balt ./components/Hero.js
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 2 - ((1 * winheight(0) + 40) / 81)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 2
+normal! 0
+tabnext 3
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
