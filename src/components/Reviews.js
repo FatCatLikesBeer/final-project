@@ -1,8 +1,12 @@
+import ReviewsCard from "./ReviewsCard.js"
+
 export default function Reviews() {
   return (
-    <p>
-    This is the reviews section.
-    This section will include little cards with guest reviews and such.
-    </p>
+    <>
+      <div id="reviewssection">
+        <p>Reviews Section</p>
+        <ReviewsCard />
+      </div>
+    </>
   );
 };
