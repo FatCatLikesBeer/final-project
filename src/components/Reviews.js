@@ -16,12 +16,13 @@ export default function Reviews() {
 
   const url = "https://randomuser.me/api/";
   const generateRandomUser = (callback) => {
-    let userObject = {name: "", image: ""};
+    let userObject = {name: "", image: "", id: ""};
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         userObject.name = data.results[0].name.first + " " + data.results[0].name.last.slice(0, 1) + ".";
         userObject.image = data.results[0].picture.medium;
+        userObject.id= data.results[0].login.uuid;
         callback(userObject);
       });
   };
@@ -37,7 +38,7 @@ export default function Reviews() {
 
   // One down, 2 to go...
   const reviewsCardsList = users.map((e) => {
-      return <ReviewsCard name={e.name} image={e.image} />
+      return <ReviewsCard name={e.name} image={e.image} id={e.id} key={e.id}/>
     }
   );
 
