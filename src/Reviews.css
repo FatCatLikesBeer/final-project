@@ -1,3 +1,39 @@
 #reviewssection {
-  color: pink;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.reviewscard {
+  background-color: lightgrey;
+  border-radius: 25px;
+  text-align: left;
+  display: grid;
+  max-width: 250px;
+  grid-template-columns: 80px auto;
+  padding: 10px 10px;
+  margin: 10px;
+}
+
+.customeriamge {
+  height: 75px;
+  width: 75px;
+  border-radius: 100%;
+  padding-top: 5px;
+}
+
+.customername {
+  text-transform: uppercase;
+}
+
+.reviewcopy > h3, .customerrating, .customerreview {
+  padding: 0px 0px 0px 10px;
+  margin: 0px;
+}
+
+.customerrating, .customerreview {
+  font-size: 12px;
 }

@@ -3,10 +3,11 @@ export default function DishCards(props) {
   const price = props.dish.price;
   const image = props.dish.image;
   const copy = props.dish.copy;
+  const alt = props.dish.alt;
 
   return (
     <div className="dishcard">
-      <img src={image} className="dishimage" />
+      <img src={image} className="dishimage" alt={alt} />
       <div className="dishtext">
         <div className="dishhead">
           <div className="dishname"><h3>{name}</h3></div>
@@ -15,7 +16,6 @@ export default function DishCards(props) {
         <div className="dishcopy">{copy}</div>
         <p><a href="./order.js">Order ↣</a></p>
       </div>
-
     </div>
   );
 };
