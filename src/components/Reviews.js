@@ -11,8 +11,7 @@ export default function Reviews() {
   const [user2, setUser2] = useState({});
   const [user3, setUser3] = useState({});
   const [user4, setUser4] = useState({});
-  const [user5, setUser5] = useState({});
-  const users = [user0, user1, user2, user3, user4, user5]
+  const users = [user0, user1, user2, user3, user4]
 
   const url = "https://randomuser.me/api/";
   const generateRandomUser = (callback) => {
@@ -33,7 +32,6 @@ export default function Reviews() {
     generateRandomUser(setUser2);
     generateRandomUser(setUser3);
     generateRandomUser(setUser4);
-    generateRandomUser(setUser5);
   }, []);
 
   // One down, 2 to go...

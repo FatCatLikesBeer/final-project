@@ -1,0 +1,31 @@
+#aboutus {
+  margin-top: 60px;
+  color: pink;
+}
+
+#foundersImageComponent {
+  text-align: left;
+  width: 500px;
+  height: 300px;
+  background-color: pink;
+  position: relative;
+}
+
+#foundersImage, #foundersImagebg {
+  max-width: 400px;
+  border-radius: 15px;
+}
+
+#aboutus #foundersImage {
+  position: absolute;
+  top: 9px;
+  left: 0px;
+  z-index: 2;
+}
+
+#aboutus #foundersImagebg {
+  position: absolute;
+  top: 0px;
+  left: 9px;
+  z-index: 1;
+}

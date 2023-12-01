@@ -1,4 +1,4 @@
-const chefImage = require("../icons_assets/Mario and Adrian A.jpg");
+const chefImage = require("../icons_assets/Mario_and_Adrian_a.jpg");
 
 function Header() {
   return (

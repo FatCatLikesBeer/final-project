@@ -9,7 +9,7 @@
 
 .reviewscard {
   background-color: lightgrey;
-  border-radius: 25px;
+  border-radius: 15px;
   text-align: left;
   display: grid;
   max-width: 250px;

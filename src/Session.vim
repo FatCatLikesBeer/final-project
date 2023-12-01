@@ -13,15 +13,16 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +9 ./App.js
-badd +8 ./components/Reviews.js
-badd +6 ./Reviews.css
-badd +8 ./components/ReviewsCard.js
-badd +13 ~/Coursera/Meta_Front-End/final-project/src/components/DishCards.js
-badd +13 ./index.js
+badd +4 ./App.js
+badd +27 ./App.css
+badd +25 ./components/AboutUs.js
+badd +18 ./AboutUs.css
+badd +12 ./Reviews.css
+badd +6 ./Dish.css
 argglobal
 %argdel
 $argadd ./App.js
+tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
@@ -37,14 +38,18 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 9 - ((8 * winheight(0) + 40) / 81)
+15
+normal! zo
+16
+normal! zo
+let s:l = 17 - ((16 * winheight(0) + 41) / 82)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 9
-normal! 043|
+keepjumps 17
+normal! 016|
 tabnext
-edit ./components/Reviews.js
+edit ./App.css
 argglobal
 balt ./App.js
 setlocal fdm=indent
@@ -55,24 +60,16 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-6
-normal! zo
-19
-normal! zo
-21
-normal! zo
-22
-normal! zo
-let s:l = 8 - ((7 * winheight(0) + 41) / 82)
+let s:l = 27 - ((26 * winheight(0) + 41) / 82)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
-normal! 018|
+keepjumps 27
+normal! 0
 tabnext
-edit ./Reviews.css
+edit ./components/AboutUs.js
 argglobal
-balt ./components/Reviews.js
+balt ./App.css
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -81,14 +78,63 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 6 - ((5 * winheight(0) + 40) / 81)
+7
+normal! zo
+11
+normal! zo
+21
+normal! zo
+let s:l = 25 - ((24 * winheight(0) + 41) / 82)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 6
-normal! 015|
+keepjumps 25
+normal! 07|
 tabnext
-edit ./components/ReviewsCard.js
+edit ./AboutUs.css
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+argglobal
+balt ./components/AboutUs.js
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 18 - ((17 * winheight(0) + 41) / 82)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 18
+normal! 0
+tabnext
+edit ./Reviews.css
+argglobal
+balt ./AboutUs.css
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 12 - ((11 * winheight(0) + 41) / 82)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 12
+normal! 018|
+tabnext
+edit ./Dish.css
 argglobal
 balt ./Reviews.css
 setlocal fdm=indent
@@ -99,51 +145,19 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-3
-normal! zo
-8
-normal! zo
-9
-normal! zo
-let s:l = 3 - ((2 * winheight(0) + 40) / 81)
+let s:l = 30 - ((29 * winheight(0) + 41) / 82)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 3
-normal! 010|
-tabnext
-edit ~/Coursera/Meta_Front-End/final-project/src/components/DishCards.js
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=99
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 13 - ((12 * winheight(0) + 40) / 81)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 13
-normal! 025|
-tabnext 5
+keepjumps 30
+normal! 015|
+tabnext 4
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
