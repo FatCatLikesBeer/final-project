@@ -1,31 +1,71 @@
 #aboutus {
-  margin-top: 60px;
+  margin: 30px auto;
   color: pink;
+  }
+
+#aboutustitle {
+  margin-bottom: 10px;
+}
+
+#aboutuscomponents {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(2, 35%);
+  grid-column-gap: 5%;
+  max-width: 1950px;
+  margin: auto;
+  padding: 0px 10px;
+}
+
+#aboutuscomponents > * {
+  min-width: 350px;
+}
+
+#aboutuscopy {
+  text-align: left;
+  background-color: dodgerblue;
+  width: 500px;
+  height: 330px;
 }
 
 #foundersImageComponent {
-  text-align: left;
+  text-align: right;
+  align-items: right;
   width: 500px;
-  height: 300px;
+  height: 330px;
   background-color: pink;
   position: relative;
 }
 
 #foundersImage, #foundersImagebg {
-  max-width: 400px;
+  max-width: 450px;
   border-radius: 15px;
 }
 
-#aboutus #foundersImage {
+#foundersImage {
   position: absolute;
   top: 9px;
   left: 0px;
   z-index: 2;
 }
 
-#aboutus #foundersImagebg {
+#foundersImagebg {
   position: absolute;
   top: 0px;
   left: 9px;
   z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+
+  #foundersImageComponent {
+    display: none;
+  }
+
+  #aboutuscopy {
+    width: auto;
+    height: auto;
+    padding: auto;
+    margin: auto;
+  }
 }

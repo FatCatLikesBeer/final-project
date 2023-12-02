@@ -23,6 +23,7 @@ export default function Reviews() {
         userObject.image = data.results[0].picture.medium;
         userObject.id= data.results[0].login.uuid;
         callback(userObject);
+        console.log(userObject.name)
       });
   };
 
