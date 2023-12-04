@@ -1,7 +1,8 @@
 #aboutus {
-  margin: 30px auto;
-  color: pink;
-  }
+  margin: 30px;
+  align-items: center;
+  justify-content: center;
+}
 
 #aboutustitle {
   margin-bottom: 10px;
@@ -15,6 +16,7 @@
   max-width: 1950px;
   margin: auto;
   padding: 0px 10px;
+  justify-content: center;
 }
 
 #aboutuscomponents > * {
@@ -23,7 +25,6 @@
 
 #aboutuscopy {
   text-align: left;
-  background-color: dodgerblue;
   width: 500px;
   height: 330px;
 }
@@ -33,7 +34,6 @@
   align-items: right;
   width: 500px;
   height: 330px;
-  background-color: pink;
   position: relative;
 }
 
