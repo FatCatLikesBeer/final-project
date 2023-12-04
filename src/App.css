@@ -3,6 +3,23 @@
   margin-top: 40px;
 }
 
+button {
+  background-color: #F4CE14;
+  color: #3A4B46;
+  font-family: "Markazi Text";
+  font-size: 20px;
+  border-radius: 15px;
+  border: none;
+  height: 35px;
+  width: 120px;
+  transition-duration: 0.2s;
+}
+
+button:hover {
+  background-color: black;
+  color: #F4CE14;
+}
+
 a {
   color: #3A4B46;
   text-decoration: none;
@@ -58,6 +75,10 @@ h4 {
 
 #herosection {
   margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: auto;
+  padding-left: auto;
   display: flex;
   grid-template-columns: repeat(2, 35%);
   grid-column-gap: 10%;
@@ -71,6 +92,10 @@ h4 {
   width: 50vw;
 }
 
+#herocopy h1 {
+  width: 330px;
+}
+
 #herocopy h2 {
   margin-top: 20px;
 }
@@ -78,7 +103,7 @@ h4 {
 #herodescription {
   text-align: left;
   width: 300px;
-  height: 150px;
+  height: 75px;
 }
 
 #heroimagediv {
@@ -87,15 +112,23 @@ h4 {
 }
 
 @media screen and (max-width: 600px) {
-
-  #heroimagediv {
-    display: none;
-  }
-
   #herosection {
     display: grid;
     grid-template-columns: auto;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #heroimagediv {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 46pt;
+    width: 270px;
   }
 }
 
@@ -108,8 +141,11 @@ footer {
   text-align: left;
   display: flex;
   flex-wrap: wrap;
-  margin: 200px 60px 20px 60px;
+  margin: auto;
+  padding: auto;
+  padding-top: 100px;
   max-width: 800px;
+  justify-content: center;
 }
 
 footer .quarter {
@@ -130,7 +166,7 @@ footer a {
   min-width: 40px;
   display: center;
   padding-right: 50px;
-  padding-bottom: 30px;
+  padding-top: 5px;
 }
 
 #footerlogo img {
@@ -139,6 +175,7 @@ footer a {
 
 #copyright {
   background-color: #3A4B46;
+  color: white;
   margin: 0px;
   height: 60px;
   width: 100%;

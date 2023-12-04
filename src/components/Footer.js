@@ -31,7 +31,6 @@ function Footer() {
         <a href="/contact/#email">Email</a>
         <a href="/contact/#address">Address</a>
       </div>
-      <div className="quarter"></div>
     </footer>
   );
 };

@@ -5,7 +5,7 @@ const cardmenu = {
     name: "Greek Salad",
     price: "$12.99",
     copy: "The famous Greek salad of crispy lettuce, peppers, olives, and our Chicago style feta cheese, garnished with toasted garlic and rosemary croutons.",
-    image: require("../icons_assets/greek salad.jpg"),
+    image: require("../icons_assets/greek_salad.jpg"),
     alt: "Image of our delicious, crispy Greek Salad.",
   },
   bruchetta: {
