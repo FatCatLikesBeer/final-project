@@ -10,16 +10,26 @@ import Dish from "./components/Dish";
 import Reviews from "./components/Reviews";
 import Copyright from "./components/Copyright";
 import AboutUs from "./components/AboutUs.js";
+import BookingPage from "./components/BookingPage.js"
+import { Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Navigation />
-      <Hero />
-      <Dish />
-      <Reviews />
-      <AboutUs />
+      <Routes>
+        <Route path='/' element={
+          <>
+            <Hero />
+            <Dish />
+            <Reviews />
+            <AboutUs />
+          </>
+        } 
+        />
+        <Route path='/reserve' element={ <BookingPage /> } />
+      </Routes>
       <Footer />
       <Copyright />
     </div>

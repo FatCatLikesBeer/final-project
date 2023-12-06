@@ -18,7 +18,7 @@ export default function Hero() {
           <button id="herobutton" onClick={handleClick}>Order Online</button>
         </div>
         <div id="heroimagediv">
-          <img id="heroimage" src={heroImage} />
+          <img id="heroimage" src={heroImage} alt="Our lovely bruschetta flight on a slate plate."/>
         </div>
       </div>
     </div>

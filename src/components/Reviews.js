@@ -42,11 +42,11 @@ export default function Reviews() {
   );
 
   return (
-    <>
+    <div id="reviews">
       <h2>Testimonials</h2>
       <div id="reviewssection">
         {reviewsCardsList}
       </div>
-    </>
+    </div>
   );
 };

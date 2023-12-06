@@ -1,16 +1,17 @@
 import React from "react";
 import { ReactComponent as Logo } from "../icons_assets/logo.svg";
+import { Link } from 'react-router-dom';
 
 function Navigation() {
   return (
     <>
       <div id="headerlogo"><Logo /></div>
       <div id="navrow">
-        <a href="/#home">Home</a>
-        <a href="/#about">About</a>
-        <a href="/#menu">Menu</a>
-        <a href="/#reserve">Reserve</a>
-        <a href="/#order">Order</a>
+        <Link to="/">Home</Link>
+        <a href="/#aboutus">About</a>
+        <a href="/#dishcomponent">Menu</a>
+        <Link to="/reserve">Reserve</Link>
+        <a href="/#reviews">Reviews</a>
         <a href="/#login">Login</a>
       </div>
     </>
