@@ -11,7 +11,7 @@ import Reviews from "./components/Reviews";
 import Copyright from "./components/Copyright";
 import AboutUs from "./components/AboutUs.js";
 import BookingPage from "./components/BookingPage.js"
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (

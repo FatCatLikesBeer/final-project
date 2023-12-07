@@ -11,7 +11,7 @@ function Navigation() {
         <a href="/#aboutus">About</a>
         <a href="/#dishcomponent">Menu</a>
         <Link to="/reserve">Reserve</Link>
-        <a href="/#reviews">Reviews</a>
+        <a href="/#">Reviews</a>
         <a href="/#login">Login</a>
       </div>
     </>

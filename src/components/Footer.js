@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Logo = require("../icons_assets/logo_vertical.png");
 
@@ -6,23 +7,24 @@ function Footer() {
   return (
     <footer>
       <div className="quarter" id="footerlogo">
-        <img src={Logo} />
+        <img alt="Logo" src={Logo} />
       </div>
       <div className="quarter" id="navigation">
         <h4>Navigation</h4>
-        <a href="/#home">Home</a>
-        <a href="/#about">About</a>
-        <a href="/#menu">Menu</a>
-        <a href="/#reservation">Reservation</a>
-        <a href="/#order">Order</a>
-      </div>
+        <Link to="/">Home</Link>
+        <a href="/#aboutus">About</a>
+        <a href="/#dishcomponent">Menu</a>
+        <Link to="/reserve">Reserve</Link>
+        <a href="/#">Reviews</a>
+        <a href="/#login">Login</a>
+       </div>
       <div className="quarter" id="socialMedia">
         <h4>Social Media</h4>
-        <a href="https://www.twitter.com" target="_blank">Twitter</a>
-        <a href="https://www.facebook.com" target="_blank">Facebook</a>
-        <a href="https://www.instagram.com" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com" target="_blank">TikTok</a>
-        <a href="https://www.youtube.com" target="_blank">YouTube</a>
+        <a href="https://www.twitter.com" target="_blank" rel="noreferrer">Twitter</a>
+        <a href="https://www.facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com" target="_blank" rel="noreferrer">TikTok</a>
+        <a href="https://www.youtube.com" target="_blank" rel="noreferrer">YouTube</a>
       </div>
       <div className="quarter" id="contact">
         <h4>Contact</h4>
