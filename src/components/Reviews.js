@@ -36,7 +36,6 @@ export default function Reviews() {
   }, []);
 
   // One down, 2 to go...
-  const key = 2
   const reviewsCardsList = users.map((e) => {
       return <ReviewsCard name={e.name} image={e.image} id={e.id} key={e.id}/>
     }
