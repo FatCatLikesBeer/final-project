@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function BookingForm() {
-  const [date, setDate] = useState();
-  const [time, setTime] = useState("6:00pm");
-  const [guests, setGuests] = useState(2);
+export default function BookingForm( availableTimes ) {
+  const [date, setDate] = useState("");
+  const [guests, setGuests] = useState("2");
   const [occasion, setOccasion] = useState("Birthday");
+  const [time, setTime] = useState("0630")
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -12,29 +12,34 @@ export default function BookingForm() {
     console.log("I'm in here doing thangs...")
   }
 
+  const timeSlots = availableTimes.availableTimes;
+  const times = timeSlots.map( (e) => {
+    const timeKey = e[0];
+    const timeValue = e[1];
+    return(<option value={timeKey}>{timeValue}</option>);
+  });
+
   return (
     <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }} onSubmit={handleSubmit} >
-      <label htmlFor="res-date">Choose Date</label>
+      {/* --- Date Input --- */}
+      <label htmlFor="res-date"><h3>Choose Date</h3></label>
       <input
         value={date}
         onChange={ (e) => setDate(e.target.value) }
         type="date"
         id="res-date"
       />
-      <label htmlFor="res-time">Choose Time</label>
+      {/* --- Time Input --- */}
+      <label htmlFor="res-time"><h3>Choose Time</h3></label>
       <select 
         id="res-time"
         value={time}
         onChange={ (e) => setTime(e.target.value) }
       >
-        <option value="5:00pm">5:00 pm</option>
-        <option value="6:00pm">6:00 pm</option>
-        <option value="7:00pm">7:00 pm</option>
-        <option value="8:00pm">8:00 pm</option>
-        <option value="9:00pm">9:00 pm</option>
-        <option value="10:00pm">10:00 pm</option>
+        {times}
       </select>
-      <label htmlFor="guests">Number of Guests</label>
+      {/* --- Guests Input --- */}
+      <label htmlFor="guests"><h3>Number of Guests</h3></label>
       <input 
         type="number"
         placeholder={guests}
@@ -43,7 +48,8 @@ export default function BookingForm() {
         id="guests"
         onChange={ (e) => setGuests(e.target.value) }
       />
-      <label htmlFor="occasion">Occasion</label>
+      {/* --- Occasion Input --- */}
+      <label htmlFor="occasion"><h3>Occasion</h3></label>
       <select
         id="occasion"
         value={occasion}
@@ -53,8 +59,9 @@ export default function BookingForm() {
         <option value="Engagement">Engagement</option>
         <option value="Graduation">Graduation</option>
         <option value="Anniversary">Anniversary</option>
-        <option value="Promotion">Promotion</option>
+        <option value="New Job">New Job</option>
       </select>
+      {/* --- Submit --- */}
       <input
         type="submit"
         value="Make Your Reservation" />
