@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function BookingForm( props ) {
   // Delcaring state variables
@@ -6,7 +6,6 @@ export default function BookingForm( props ) {
   const [guests, setGuests] = useState("2");
   const [occasion, setOccasion] = useState("Birthday");
   const [time, setTime] = useState("0630");
-  const [day, setDay] = useState(0);
 
   // Prevent the screen from refreshing when submitting form
   const handleSubmit = (event) => {

@@ -12,7 +12,7 @@ import Copyright from "./components/Copyright";
 import AboutUs from "./components/AboutUs.js";
 import BookingPage from "./components/BookingPage.js"
 import CandyBar from "./components/CandyBar.js";
-import { useState, useReducer } from "react";
+import { useReducer } from "react";
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
