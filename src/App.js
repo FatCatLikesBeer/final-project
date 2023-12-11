@@ -22,6 +22,7 @@ function App() {
   ];
 
   const weekDays = [
+    ["notAnOption", "-- Select Time --"],
     ["0500", "5:00 PM"],
     ["0530", "5:30 PM"],
     ["0600", "6:00 PM"],
@@ -35,6 +36,7 @@ function App() {
   ];
 
   const weekEnds = [
+    ["notAnOption", "-- Select Time --"],
     ["0500", "5:00 PM"],
     ["0530", "5:30 PM"],
     ["0600", "6:00 PM"],

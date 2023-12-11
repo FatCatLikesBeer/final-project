@@ -5,7 +5,7 @@ export default function BookingForm( props ) {
   const [date, setDate] = useState("");
   const [guests, setGuests] = useState("2");
   const [occasion, setOccasion] = useState("Birthday");
-  const [time, setTime] = useState("0630");
+  const [time, setTime] = useState("init");
 
   // Prevent the screen from refreshing when submitting form
   const handleSubmit = (event) => {
@@ -14,14 +14,15 @@ export default function BookingForm( props ) {
 
   // Splitting props to unique variables
   const restrictTimes = props.dispatch;
-  const timeSlots = props.availableTimes;
+  const timeSlots = props.availableTimes !== 'undefined' ? props.availableTimes : [["", ""]];
 
   // Parsing the list of available times to something react can render
-  // This mapping causes error in the console.
+  // This mapping causes error in the console and in the testing library.
   const times = timeSlots.map( (e) => {
     const timeKey = e[0];
     const timeValue = e[1];
-    return(<option value={timeKey}>{timeValue}</option>);
+    const keyId = timeKey;
+    return(<option key={keyId} value={timeKey}>{timeValue}</option>);
   });
 
   // Takes the date selection, and sends one value to the main
@@ -37,6 +38,7 @@ export default function BookingForm( props ) {
       selectedDay = {type: "weekday"}
     } else {
       selectedDay = {type: ""};
+      setTime("");
     }
     restrictTimes(selectedDay);
     return selection;
@@ -92,8 +94,9 @@ export default function BookingForm( props ) {
 
       {/* --------------- Submit --------------- */}
       <input
+        data-testid="button"
         type="submit"
-        value="Make Your Reservation" />
+        value="Book Now" />
     </form>
   );
 };
