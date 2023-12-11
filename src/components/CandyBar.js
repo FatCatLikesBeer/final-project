@@ -99,11 +99,73 @@ export default function CandyBar(){
     );
   }
 
+  // Testing to see if I can pass props up components
+  const Section3 = () => {
+    const Head = () => {
+      return (
+        <>
+          <h1>Passing props up and down</h1>
+          <h2>Specifically, a reducer method as props</h2>
+        </>
+      );
+    }
+
+    const ParentComponent = () => {
+      const reducer = (state, action) => {
+        const txt = `Passed "${action.type}" through the reducer`;
+        console.log(txt);
+        switch (action.type) {
+          case "type1":
+            return "Alpha";
+          case "type2":
+            return "Beta";
+          case "type3":
+            return "Gamma";
+          default:
+            return "Defaulted";
+        }
+      }
+
+      const initialValue = "Initial State";
+
+      const [state, dispatch] = useReducer(reducer, initialValue);
+
+      return (
+        <>
+          <p>State @ parent level: {state}</p>
+          <br />
+          <ChildComponent dispatch={dispatch} state={state}/>
+        </>
+      );
+    }
+
+    const ChildComponent = (dispatch, state) => {
+      return (
+        <>
+          <button onClick={() => dispatch.dispatch({type: "type1"})}>Type1</button>
+          <button onClick={() => dispatch.dispatch({type: "type2"})}>Type2</button>
+          <button onClick={() => dispatch.dispatch({type: "type3"})}>Type3</button>
+          <button onClick={() => dispatch.dispatch({type: ""})}>Nothing</button>
+          <br />
+          <p>State @ child level: {state.state}</p>
+        </>
+      );
+    }
+
+    return (
+      <div style={{paddingBottom: "20px"}}>
+        <Head />
+        <ParentComponent />
+      </div>
+    );
+  }
+
   return (
     <>
       <Section0 />
       <Section1 />
       <Section2 />
+      <Section3 />
     </>
   );
 };

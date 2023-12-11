@@ -1,35 +1,62 @@
 import { useState, useEffect } from "react";
 
-export default function BookingForm( availableTimes ) {
+export default function BookingForm( props ) {
+  // Delcaring state variables
   const [date, setDate] = useState("");
   const [guests, setGuests] = useState("2");
   const [occasion, setOccasion] = useState("Birthday");
-  const [time, setTime] = useState("0630")
+  const [time, setTime] = useState("0630");
+  const [day, setDay] = useState(0);
 
+  // Prevent the screen from refreshing when submitting form
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(event)
-    console.log("I'm in here doing thangs...")
   }
 
-  const timeSlots = availableTimes.availableTimes;
+  // Splitting props to unique variables
+  const restrictTimes = props.dispatch;
+  const timeSlots = props.availableTimes;
+
+  // Parsing the list of available times to something react can render
+  // This mapping causes error in the console.
   const times = timeSlots.map( (e) => {
     const timeKey = e[0];
     const timeValue = e[1];
     return(<option value={timeKey}>{timeValue}</option>);
   });
 
+  // Takes the date selection, and sends one value to the main
+  // component and returns another value back to local state.
+  const dayParser = (selection) => {
+    const newDay = new Date(selection);
+
+    let selectedDay = {};
+
+    if (newDay.getDay() === 0 || newDay.getDay() > 4) {
+      selectedDay = {type: "weekend"};
+    } else if ( newDay.getDay() > 0 && newDay.getDay() < 5 ) {
+      selectedDay = {type: "weekday"}
+    } else {
+      selectedDay = {type: ""};
+    }
+    restrictTimes(selectedDay);
+    return selection;
+  }
+
+  // Rendering Shit
   return (
     <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }} onSubmit={handleSubmit} >
-      {/* --- Date Input --- */}
+
+      {/* --------------- Date Input --------------- */}
       <label htmlFor="res-date"><h3>Choose Date</h3></label>
       <input
         value={date}
-        onChange={ (e) => setDate(e.target.value) }
+        onChange={ (e) => setDate(dayParser(e.target.value)) }
         type="date"
         id="res-date"
       />
-      {/* --- Time Input --- */}
+
+      {/* --------------- Time Input --------------- */}
       <label htmlFor="res-time"><h3>Choose Time</h3></label>
       <select 
         id="res-time"
@@ -38,7 +65,8 @@ export default function BookingForm( availableTimes ) {
       >
         {times}
       </select>
-      {/* --- Guests Input --- */}
+
+      {/* --------------- Guests Input --------------- */}
       <label htmlFor="guests"><h3>Number of Guests</h3></label>
       <input 
         type="number"
@@ -48,7 +76,8 @@ export default function BookingForm( availableTimes ) {
         id="guests"
         onChange={ (e) => setGuests(e.target.value) }
       />
-      {/* --- Occasion Input --- */}
+
+      {/* --------------- Occasion Input --------------- */}
       <label htmlFor="occasion"><h3>Occasion</h3></label>
       <select
         id="occasion"
@@ -61,7 +90,8 @@ export default function BookingForm( availableTimes ) {
         <option value="Anniversary">Anniversary</option>
         <option value="New Job">New Job</option>
       </select>
-      {/* --- Submit --- */}
+
+      {/* --------------- Submit --------------- */}
       <input
         type="submit"
         value="Make Your Reservation" />
