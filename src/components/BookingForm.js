@@ -9,7 +9,7 @@ export default function BookingForm( props ) {
 
   // Prevent the screen from refreshing when submitting form
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
   }
 
   // Splitting props to unique variables
@@ -44,7 +44,7 @@ export default function BookingForm( props ) {
     return selection;
   }
 
-  // Rendering Shit
+  // Rendering
   return (
     <form style={{ display: "center", maxWidth: "200px", gap: "20px", paddingTop: "50px", margin: "0px auto" }} onSubmit={handleSubmit} >
 

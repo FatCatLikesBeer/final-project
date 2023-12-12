@@ -17,6 +17,9 @@ import { Routes, Route } from 'react-router-dom';
 
 function App() {
 
+  // I really don't understand why they want me to put all 
+  // this state stuff in the main app when it would work just fine
+  // in the BookingForm.
   const initialTime = [
     ["", "Please select a date"]
   ];

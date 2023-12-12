@@ -1,4 +1,4 @@
-import { useState, useReducer } from "react";
+import { useState, useReducer, useEffect } from "react";
 
 export default function CandyBar(){
 
@@ -166,8 +166,19 @@ export default function CandyBar(){
   }
 
   const Section4 = () => {
+    useEffect( () => {
+      fetch("https://raw.githubusercontent.com/FatCatLikesBeer/final-project/main/public/mockAPI.js")
+        .then((data) => {
+          console.log(data)
+        });
+    } ,[])
     function Header() {
-      return <h1>Section4</h1>;
+      return (
+        <>
+          <h1>Working with mockAPI</h1>
+          <p>{null}</p>
+        </>
+      );
     };
 
     return (
