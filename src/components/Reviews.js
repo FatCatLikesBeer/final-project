@@ -21,9 +21,8 @@ export default function Reviews() {
       .then((data) => {
         userObject.name = data.results[0].name.first + " " + data.results[0].name.last.slice(0, 1) + ".";
         userObject.image = data.results[0].picture.medium;
-        userObject.id = data.results[0].login.uuid;
+        userObject.id = data.results[0].login.uuid.slice(0,5);
         callback(userObject);
-        console.log(userObject.name)
       });
   };
 
@@ -36,8 +35,9 @@ export default function Reviews() {
   }, []);
 
   // One down, 2 to go...
+  const key = 2
   const reviewsCardsList = users.map((e) => {
-      return <ReviewsCard name={e.name} image={e.image} id={e.id} key={e.id}/>
+      return <ReviewsCard name={e.name} image={e.image} id={e.id} id={e.id}/>
     }
   );
 

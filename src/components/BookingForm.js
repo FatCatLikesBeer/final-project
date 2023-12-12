@@ -46,7 +46,7 @@ export default function BookingForm( props ) {
 
   // Rendering Shit
   return (
-    <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }} onSubmit={handleSubmit} >
+    <form style={{ display: "center", maxWidth: "200px", gap: "20px", paddingTop: "50px", margin: "0px auto" }} onSubmit={handleSubmit} >
 
       {/* --------------- Date Input --------------- */}
       <label htmlFor="res-date"><h3>Choose Date</h3></label>

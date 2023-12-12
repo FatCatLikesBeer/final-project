@@ -111,9 +111,10 @@ export default function CandyBar(){
     }
 
     const ParentComponent = () => {
+      const [passedValue, setPassedValue] = useState("no button clicked");
       const reducer = (state, action) => {
         const txt = `Passed "${action.type}" through the reducer`;
-        console.log(txt);
+        setPassedValue(txt);
         switch (action.type) {
           case "type1":
             return "Alpha";
@@ -134,20 +135,24 @@ export default function CandyBar(){
         <>
           <p>State @ parent level: {state}</p>
           <br />
+          <p>{passedValue}</p>
+          <br />
           <ChildComponent dispatch={dispatch} state={state}/>
         </>
       );
     }
 
-    const ChildComponent = (dispatch, state) => {
+    const ChildComponent = (props) => {
+      const dispatcher = props.dispatch;
+      const getState = props.state;
       return (
         <>
-          <button onClick={() => dispatch.dispatch({type: "type1"})}>Type1</button>
-          <button onClick={() => dispatch.dispatch({type: "type2"})}>Type2</button>
-          <button onClick={() => dispatch.dispatch({type: "type3"})}>Type3</button>
-          <button onClick={() => dispatch.dispatch({type: ""})}>Nothing</button>
+          <button onClick={() => dispatcher({type: "type1"})}>Type1</button>
+          <button onClick={() => dispatcher({type: "type2"})}>Type2</button>
+          <button onClick={() => dispatcher({type: "type3"})}>Type3</button>
+          <button onClick={() => dispatcher({type: ""})}>Nothing</button>
           <br />
-          <p>State @ child level: {state.state}</p>
+          <p>State @ child level: {getState}</p>
         </>
       );
     }
@@ -160,12 +165,25 @@ export default function CandyBar(){
     );
   }
 
+  const Section4 = () => {
+    function Header() {
+      return <h1>Section4</h1>;
+    };
+
+    return (
+      <>
+        <Header />
+      </>
+    );
+  }
+
   return (
     <>
       <Section0 />
       <Section1 />
       <Section2 />
       <Section3 />
+      <Section4 />
     </>
   );
 };

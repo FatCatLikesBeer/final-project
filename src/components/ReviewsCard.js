@@ -2,7 +2,7 @@ export default function ReviewsCard(props) {
 
   const name = props.name;
   const image = props.image;
-  const id= props.id;
+  const id = props.id;
   const placeHolderText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
 
   return (
