@@ -30,7 +30,7 @@ const handleClick = () => {
 
 export default function Dish() {
   return (
-    <div id="dishcomponent">
+    <div id="dishes">
       <div id="dishcomponenttitle">
         <div><h2>This Week's Specials</h2></div>
         <div id="dishbutton"><button onClick={handleClick}>View Menu</button></div>

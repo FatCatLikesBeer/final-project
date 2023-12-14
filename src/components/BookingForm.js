@@ -1,4 +1,5 @@
 import { useState } from "react";
+import submitAPI from "../mockAPI.js";
 
 export default function BookingForm( props ) {
   // Delcaring state variables
@@ -6,10 +7,21 @@ export default function BookingForm( props ) {
   const [guests, setGuests] = useState("2");
   const [occasion, setOccasion] = useState("Birthday");
   const [time, setTime] = useState("init");
+  const dateLimiter = () => {
+    const dateToday = new Date();
+    const year = dateToday.getFullYear();
+    const month = (dateToday.getMonth() + 1).toString().padStart(2, "0");
+    const date = dateToday.getDate().toString().padStart(2, "0");
+    const minDate = `${year}-${month}-${date}`;
+
+    return minDate;
+  }
+  const dateLimit = dateLimiter();
 
   // Prevent the screen from refreshing when submitting form
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
+    props.setBooking(submitAPI());
   }
 
   // Splitting props to unique variables
@@ -44,9 +56,9 @@ export default function BookingForm( props ) {
     return selection;
   }
 
-  // Rendering
+  // Rendering Shit
   return (
-    <form style={{ display: "center", maxWidth: "200px", gap: "20px", paddingTop: "50px", margin: "0px auto" }} onSubmit={handleSubmit} >
+    <form style={{ display: "grid", maxWidth: "200px", gap: "20px", paddingTop: "50px", margin: "0px auto" }} onSubmit={handleSubmit} >
 
       {/* --------------- Date Input --------------- */}
       <label htmlFor="res-date"><h3>Choose Date</h3></label>
@@ -55,6 +67,7 @@ export default function BookingForm( props ) {
         onChange={ (e) => setDate(dayParser(e.target.value)) }
         type="date"
         id="res-date"
+        min={dateLimit}
       />
 
       {/* --------------- Time Input --------------- */}

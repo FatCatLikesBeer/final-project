@@ -9,10 +9,10 @@ function Navigation() {
       <div id="navrow">
         <Link to="/">Home</Link>
         <a href="/#aboutus">About</a>
-        <a href="/#dishcomponent">Menu</a>
+        <a href="/#dishes">Menu</a>
         <Link to="/reserve">Reserve</Link>
-        <a href="/#">Reviews</a>
-        <a href="/#login">Login</a>
+        <a href="/#reviewssection">Reviews</a>
+        <a href="/login">Login</a>
       </div>
     </>
   );

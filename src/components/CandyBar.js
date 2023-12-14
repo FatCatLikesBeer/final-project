@@ -1,4 +1,5 @@
 import { useState, useReducer, useEffect } from "react";
+import submitAPI from "../mockAPI.js";
 
 export default function CandyBar(){
 
@@ -166,12 +167,16 @@ export default function CandyBar(){
   }
 
   const Section4 = () => {
-    useEffect( () => {
-      fetch("https://raw.githubusercontent.com/FatCatLikesBeer/final-project/main/public/mockAPI.js")
-        .then((data) => {
-          console.log(data)
-        });
-    } ,[])
+    const [showElement, setShowElement] = useState(false);
+
+    const handleButton = () => {
+      setShowElement(submitAPI());
+    }
+
+    const Button = () => {
+      return <button onClick={handleButton}>Button</button>
+    }
+
     function Header() {
       return (
         <>
@@ -181,9 +186,30 @@ export default function CandyBar(){
       );
     };
 
+    const ShowThisElement = () => {
+      return (
+        <>
+          { 
+            showElement
+              && 
+              <div>
+                <p>
+                  The API is working!
+                </p>
+                <p>
+                  Because it's not a real API :)
+                </p>
+              </div>
+          }
+        </>
+      );
+    }
+
     return (
       <>
         <Header />
+        <ShowThisElement />
+        <Button />
       </>
     );
   }

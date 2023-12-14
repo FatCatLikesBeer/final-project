@@ -11,6 +11,7 @@ import Reviews from "./components/Reviews";
 import Copyright from "./components/Copyright";
 import AboutUs from "./components/AboutUs.js";
 import BookingPage from "./components/BookingPage.js"
+import UnderConstruction from "./components/UnderConstruction.js"
 import CandyBar from "./components/CandyBar.js";
 import { useReducer } from "react";
 import { Routes, Route } from 'react-router-dom';
@@ -86,8 +87,10 @@ function App() {
           </>
         }
         />
+        <Route path='/login' element={ <UnderConstruction /> } />
         <Route path='/reserve' element={ <BookingPage availableTimes={availableTimes} dispatch={dispatch} /> } />
         <Route path='/test' element={ <CandyBar /> } />
+        <Route path='/*' element={ <UnderConstruction /> } />
       </Routes>
       <Footer />
       <Copyright />
