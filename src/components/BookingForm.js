@@ -1,13 +1,9 @@
 import { useState } from "react";
-import submitAPI from "../mockAPI.js";
+import fakeAPI from "../mockAPI.js";
 
 export default function BookingForm( props ) {
-  // Delcaring state variables
-  const [date, setDate] = useState("");
-  const [guests, setGuests] = useState("2");
-  const [occasion, setOccasion] = useState("Birthday");
-  const [time, setTime] = useState("init");
-  const dateLimiter = () => {
+  // Generate Today's Date
+  const getTodaysDate = () => {
     const dateToday = new Date();
     const year = dateToday.getFullYear();
     const month = (dateToday.getMonth() + 1).toString().padStart(2, "0");
@@ -16,47 +12,27 @@ export default function BookingForm( props ) {
 
     return minDate;
   }
-  const dateLimit = dateLimiter();
+  const todaysDate = getTodaysDate();
+
+  // Delcaring state variables
+  const [guests, setGuests] = useState("2");
+  const [occasion, setOccasion] = useState("Birthday");
+  const [time, setTime] = useState("init");
+  const [date, setDate] = useState(todaysDate);
 
   // Prevent the screen from refreshing when submitting form
   const handleSubmit = (event) => {
     event.preventDefault()
-    props.setBooking(submitAPI());
+    props.setBooking(fakeAPI.submitAPI());
   }
 
-  // Splitting props to unique variables
-  const restrictTimes = props.dispatch;
-  const timeSlots = props.availableTimes !== 'undefined' ? props.availableTimes : [["", ""]];
-
-  // Parsing the list of available times to something react can render
-  // This mapping causes error in the console and in the testing library.
-  const times = timeSlots.map( (e) => {
-    const timeKey = e[0];
-    const timeValue = e[1];
-    const keyId = timeKey;
-    return(<option key={keyId} value={timeKey}>{timeValue}</option>);
+  // Give API selected date, recieve a list of times
+  const listOfTimes = fakeAPI.fetchAPI(new Date(date));
+  const times = listOfTimes.map( (e) => {
+    return <option value={e} key={e}>{e}</option> // 'key' is there to shut up the error in the console.
   });
 
-  // Takes the date selection, and sends one value to the main
-  // component and returns another value back to local state.
-  const dayParser = (selection) => {
-    const newDay = new Date(selection);
-
-    let selectedDay = {};
-
-    if (newDay.getDay() === 0 || newDay.getDay() > 4) {
-      selectedDay = {type: "weekend"};
-    } else if ( newDay.getDay() > 0 && newDay.getDay() < 5 ) {
-      selectedDay = {type: "weekday"}
-    } else {
-      selectedDay = {type: ""};
-      setTime("");
-    }
-    restrictTimes(selectedDay);
-    return selection;
-  }
-
-  // Rendering Shit
+  // Rendering Stuff
   return (
     <form style={{ display: "grid", maxWidth: "200px", gap: "20px", paddingTop: "50px", margin: "0px auto" }} onSubmit={handleSubmit} >
 
@@ -64,10 +40,10 @@ export default function BookingForm( props ) {
       <label htmlFor="res-date"><h3>Choose Date</h3></label>
       <input
         value={date}
-        onChange={ (e) => setDate(dayParser(e.target.value)) }
+        onChange={ (e) => { setDate(e.target.value) } }
         type="date"
         id="res-date"
-        min={dateLimit}
+        min={todaysDate}
       />
 
       {/* --------------- Time Input --------------- */}

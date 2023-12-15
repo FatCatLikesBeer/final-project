@@ -16,7 +16,7 @@ export default function BookingPage( props ) {
   const BookingContainer = () => {
     return booking ?
       <Confirmed /> : 
-      <BookingForm dispatch={props.dispatch} availableTimes={props.availableTimes} setBooking={setBooking} />
+      <BookingForm setBooking={setBooking} />
   }
 
   return (

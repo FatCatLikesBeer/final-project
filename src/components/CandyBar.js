@@ -1,5 +1,5 @@
 import { useState, useReducer, useEffect } from "react";
-import submitAPI from "../mockAPI.js";
+import fakeAPI from "../mockAPI.js";
 
 export default function CandyBar(){
 
@@ -106,7 +106,7 @@ export default function CandyBar(){
       return (
         <>
           <h1>Passing props up and down</h1>
-          <h2>Specifically, a reducer method as props</h2>
+          <h2>Specifically, the reducer dispatch method as props</h2>
         </>
       );
     }
@@ -168,50 +168,77 @@ export default function CandyBar(){
 
   const Section4 = () => {
     const [showElement, setShowElement] = useState(false);
+    const [listOfDates, setListOfDates] = useState([]);
 
     const handleButton = () => {
-      setShowElement(submitAPI());
+      setShowElement(fakeAPI.submitAPI());
     }
 
     const Button = () => {
-      return <button onClick={handleButton}>Button</button>
+      return <button onClick={handleButton}>submitAPI</button>
     }
 
     function Header() {
-      return (
-        <>
-          <h1>Working with mockAPI</h1>
-          <p>{null}</p>
-        </>
-      );
+      return ( <h1>Working with mockAPI</h1> );
     };
 
     const ShowThisElement = () => {
       return (
         <>
           { 
-            showElement
-              && 
+            showElement && 
               <div>
-                <p>
-                  The API is working!
-                </p>
-                <p>
-                  Because it's not a real API :)
-                </p>
+                <p>The API is working!</p>
+                <p>Because it's not a real API :)</p>
               </div>
           }
+          <Button />
         </>
       );
+    }
+
+    const DateAPI = () => {
+      const handleClick1 = () => {
+        const a = new Date();
+        setListOfDates(fakeAPI.fetchAPI(a));
+      }
+
+      const handleClick2 = () => {
+        const a = new Date("1987-02-13");
+        setListOfDates(fakeAPI.fetchAPI(a));
+      }
+
+     const mappedDates = listOfDates.map((e) => {
+        return (
+          <li key={e}>{e}</li>
+        );
+      });
+
+      const ButtonForDates = () => {
+        return (
+          <>
+        <button onClick={handleClick1}>Make Dates 1</button>
+        <button onClick={handleClick2}>Make Dates 2</button>
+        </>
+        )
+      }
+
+      return (
+        <>
+          <ButtonForDates />
+          <ul style={{ width: "50px", margin: "20px auto" }}>{mappedDates}</ul>
+        </>
+      )
     }
 
     return (
       <>
         <Header />
         <ShowThisElement />
-        <Button />
+        <DateAPI />
       </>
     );
+
   }
 
   return (
