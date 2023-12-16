@@ -18,7 +18,7 @@ export default function BookingForm( props ) {
   const [date, setDate] = useState(todaysDate);
   const [time, setTime] = useState("--- Select a Time ---");
   const [guests, setGuests] = useState("0");
-  const [occasion, setOccasion] = useState("--- Select an Occasion ---");
+  const [occasion, setOccasion] = useState("init");
   const [timeError, setTimeError] = useState({
     isFocused: false,
     isBlured: false,

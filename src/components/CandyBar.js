@@ -241,6 +241,31 @@ export default function CandyBar(){
 
   }
 
+  const Section5 = () => {
+    const [sect5, setSect5] = useState(true);
+
+    const Header = () => {
+      return <h1>useEffect</h1>
+    }
+
+    const handleClick = () => {
+      setSect5(!sect5);
+    }
+
+    const Button = () => {
+      return <button onClick={handleClick}>Button</button>
+    }
+
+    useEffect( () => { console.log("useEffect in Effect!") }, [sect5])
+
+    return (
+      <>
+        <Header />
+        <Button />
+      </>
+    )
+  }
+
   return (
     <>
       <Section0 />
@@ -248,6 +273,7 @@ export default function CandyBar(){
       <Section2 />
       <Section3 />
       <Section4 />
+      <Section5 />
     </>
   );
 };
