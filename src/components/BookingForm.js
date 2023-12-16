@@ -47,26 +47,32 @@ export default function BookingForm( props ) {
 
   const handleTimeFocused = () => {
     setTimeError({...timeError, isFocused: true});
+    formValidator();
   }
 
   const handleTimeBlured = () => {
     setTimeError({...timeError, isBlured: true});
+    formValidator();
   }
 
   const handleOccasionFocused = () => {
     setOccasionError({...occasionError, isFocused: true})
+    formValidator();
   }
 
   const handleOccasionBlured = () => {
     setOccasionError({...occasionError, isBlured: true})
+    formValidator();
   }
 
   const handleGuestsFocused = () => {
     setGuestsError({...guestsError, isFocused: true})
+    formValidator();
   }
 
   const handleGuestsBlured = () => {
     setGuestsError({...guestsError, isBlured: true})
+    formValidator();
   }
 
   const formValidator = () => {
@@ -97,8 +103,8 @@ export default function BookingForm( props ) {
           id="res-time"
           value={time}
           onChange={ (e) => setTime(e.target.value) }
-          onFocus={handleTimeFocused, formValidator}
-          onBlur={handleTimeBlured, formValidator}
+          onFocus={handleTimeFocused}
+          onBlur={handleTimeBlured}
         >
           {times}
         </select>
@@ -112,8 +118,8 @@ export default function BookingForm( props ) {
           max="10"
           id="guests"
           onChange={ (e) => setGuests(e.target.value) }
-          onFocus={handleGuestsFocused, formValidator}
-          onBlur={handleGuestsBlured, formValidator}
+          onFocus={handleGuestsFocused}
+          onBlur={handleGuestsBlured}
         />
         {guests > 10 && <p style={{color: "red"}}>We can not accept parties with more than guests.</p>}
 
@@ -123,8 +129,8 @@ export default function BookingForm( props ) {
           id="occasion"
           value={occasion}
           onChange={ (e) => setOccasion(e.target.value) }
-          onFocus={handleOccasionFocused, formValidator}
-          onBlur={handleOccasionBlured, formValidator}
+          onFocus={handleOccasionFocused}
+          onBlur={handleOccasionBlured}
         >
           <option value="init">--- Select an Occasion ---</option>
           <option value="Birthday">Birthday</option>
