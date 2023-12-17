@@ -18,22 +18,26 @@ import { useReducer } from "react";
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
+  const Main = () => {
+    return (
+      <>
+        <Hero />
+        <Dish />
+        <Reviews />
+        <AboutUs />
+      </>
+    )
+  }
 
   return (
     <div className="App">
       <Header />
       <Navigation />
       <Routes>
-        <Route path='/' element={
-          <>
-            <Hero />
-            <Dish />
-            <Reviews />
-            <AboutUs />
-          </>
-        }
-        />
+        <Route path='/' element={ <Main /> } />
         <Route path='/login' element={ <UnderConstruction /> } />
+        <Route path='/menu' element={ <UnderConstruction /> } />
+        <Route path='/order' element={ <UnderConstruction /> } />
         <Route path='/reserve' element={ <BookingPage /> } />
         <Route path='/test' element={ <CandyBar /> } />
         <Route path='/*' element={ <CantFindPage /> } />

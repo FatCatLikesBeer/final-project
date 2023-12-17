@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import fakeAPI from "../mockAPI.js";
 
 export default function BookingForm( props ) {
@@ -47,32 +47,26 @@ export default function BookingForm( props ) {
 
   const handleTimeFocused = () => {
     setTimeError({...timeError, isFocused: true});
-    formValidator();
   }
 
   const handleTimeBlured = () => {
     setTimeError({...timeError, isBlured: true});
-    formValidator();
   }
 
   const handleOccasionFocused = () => {
     setOccasionError({...occasionError, isFocused: true})
-    formValidator();
   }
 
   const handleOccasionBlured = () => {
     setOccasionError({...occasionError, isBlured: true})
-    formValidator();
   }
 
   const handleGuestsFocused = () => {
     setGuestsError({...guestsError, isFocused: true})
-    formValidator();
   }
 
   const handleGuestsBlured = () => {
     setGuestsError({...guestsError, isBlured: true})
-    formValidator();
   }
 
   const formValidator = () => {
@@ -82,13 +76,16 @@ export default function BookingForm( props ) {
     else if (occasion == "init") {setFormIsValid(true)}
     else {setFormIsValid(false)}
   }
+
+  useEffect( () => { formValidator() } , [date, time, guests, occasion])
+
   // Rendering Stuff
   return (
     <>
       <form style={{ display: "grid", maxWidth: "200px", gap: "20px", paddingTop: "50px", margin: "0px auto" }} onSubmit={handleSubmit} >
 
         {/* --------------- Date Input --------------- */}
-        <label htmlFor="res-date"><h3>Choose Date</h3></label>
+        <label data-testid="choose date" htmlFor="res-date"><h3>Choose Date</h3></label>
         <input
           value={date}
           onChange={ (e) => { setDate(e.target.value); setTime("--- Select a Time ---") } }
