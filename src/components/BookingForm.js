@@ -70,10 +70,10 @@ export default function BookingForm( props ) {
   }
 
   const formValidator = () => {
-    if (time == "--- Select a Time ---") {setFormIsValid(true)}
+    if (time === "--- Select a Time ---") {setFormIsValid(true)}
     else if (guests <= 0) {setFormIsValid(true)}
     else if (guests > 10) {setFormIsValid(true)}
-    else if (occasion == "init") {setFormIsValid(true)}
+    else if (occasion === "init") {setFormIsValid(true)}
     else {setFormIsValid(false)}
   }
 
